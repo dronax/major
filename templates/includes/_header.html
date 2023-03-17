@@ -1,0 +1,31 @@
+{% load static %}
+<!--url cache-->
+{% url 'core:record' as record_url %}
+<!--url cache-->
+{% url 'core:index' as home_url %}
+<section class="hero is-info is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="{% url 'core:index' %}">
+            <img src="{% static 'assets/images/voice.jpg' %}" alt="Logo" />
+          </a>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item {% if request.path == home_url %} is-active {% endif %}" href="{% url 'core:index' %}">
+              Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>

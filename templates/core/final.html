@@ -1,0 +1,32 @@
+<!--inherits the layout-->
+{% extends '_base.html' %}
+<!--static-->
+{% load static %}
+<!--title-->
+{% block title %}{{page_title}}{% endblock title %}
+
+<!--additional css-->
+
+<!--content-->
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-offset-4 is-4">
+                <h1 class="title">Generated Audio</h1>
+                <div class="card">
+                    <div class="card-image">
+                        <audio src="{{generated_file}}" controls >
+                            
+                        </audio>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+</section>
+{% endblock content %}

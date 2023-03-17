@@ -1,0 +1,41 @@
+<!--inherits the layout-->
+{% extends '_base.html' %}
+<!--static-->
+{% load static %}
+<!--title-->
+{% block title %}{{page_title}}{% endblock title %}
+
+<!--additional css-->
+
+<!--content-->
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-offset-4 is-4">
+        <h1 class="title">Recorded audio</h1>
+        <div class="card">
+          <div class="card-image">
+            <audio src="{{record.voice_record.url}}" controls></audio>
+          </div>
+          <div>
+          <form method="POST" action="/generated/">
+            {% csrf_token %}
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Enter The Text" name="speechtext" />
+              <input type="hidden" name="id" value="{{ id }}">
+            </div>
+<div class="control" style="margin-top: 1rem">
+  <button class="button is-info" id="submit">Submit</button>
+</div>          
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+</section>
+{% endblock content %}
