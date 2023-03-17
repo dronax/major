@@ -1,0 +1,4 @@
+.pt filter=lfs diff=lfs merge=lfs -text
+trained_models/vocoder.pt filter=lfs diff=lfs merge=lfs -text
+trained_models/encoder.pt filter=lfs diff=lfs merge=lfs -text
+trained_models/synthesizer.pt filter=lfs diff=lfs merge=lfs -text
